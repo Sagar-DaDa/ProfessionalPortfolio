@@ -1,0 +1,32 @@
+.site-name {
+  background-clip: text;
+  -webkit-background-clip: text; /* Safari/Chrome */
+  -moz-background-clip: text; /* Firefox */
+  -ms-background-clip: text; /* Internet Explorer */
+  color: transparent;
+  background-image: radial-gradient(
+    circle farthest-corner at 50.4% 50.5%,
+    rgba(167, 201, 87, 1) 0%,
+    rgba(106, 153, 78, 1) 90%
+  );
+}
+/* .theme-toggler {
+    border: 1px solid rgba(128, 128, 128, 0.50);
+    background-image: radial-gradient(
+      circle farthest-corner at 50.4% 50.5%,
+      rgba(167, 201, 87, 1) 0%,
+      rgba(106, 153, 78, 1) 90%
+  );
+}
+.theme-toggler:hover {
+  background-image: radial-gradient(
+    circle farthest-corner at 32.7% 82.7%,
+    rgba(106, 153, 78, 1) 8.3%,
+    rgba(56, 102, 65, 1) 79.4%
+  );
+  color: white !important;
+}
+
+.navbar-toggler {
+  font-size: 30px !important;
+} */

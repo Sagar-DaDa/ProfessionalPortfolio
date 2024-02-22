@@ -1,0 +1,137 @@
+
+
+Navbar [nav]:
+- bg-opacity-75 bg-blur-3
+- theme.textColorMain
+
+Home [#home]:
+- style={{ color: color }}
+- cool-gradient-btn
+
+About [#about]:
+- bg-blur-5
+- style={{
+          borderTop: "1px solid rgba(128, 128, 128, 0.15)",
+          borderBottom: "1px solid rgba(128, 128, 128, 0.15)",
+          backgroundImage: "radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.20) 0.1%, rgba(239,249,251,0.20) 90.1% )"
+        }}
+- isDarkMode ? "text-light" : "text-dark"
+- style={theme.textColorMain}>
+- ${theme.styleClass.buttonRBg}
+
+
+Resume [#resume]:
+- style={theme.textColorMain}
+- style={{
+                    boxShadow:
+                      " rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+                  }}
+- style={{
+                      backgroundImage:
+                        "linear-gradient( 106.8deg,  rgba(106, 153, 78, 1) 6%, rgba(167, 201, 87, 1) 47.6%, rgba(106, 153, 78, 1) 87.8% )",
+                      color: theme.textColorLight.color,
+                    }}
+- style={{
+                          border: "1px solid rgba(128, 128, 128, 0.5)",
+                          backgroundImage:
+                                "radial-gradient( circle farthest-corner at 32.7% 82.7%, rgba(0, 0, 0, 0.10) 8.3%, rgba(0, 0, 0, 0.10) 79.4% )",
+                        }}
+- style={{
+                              border: "1px solid rgba(128, 128, 128, 0.5)",
+                              backgroundImage:
+                                "radial-gradient( circle farthest-corner at 32.7% 82.7%, rgba(167, 201, 87, 1) 8.3%, rgba(106, 153, 78, 1) 79.4% )",
+                              color: theme.textColorLight.color,
+                            }}
+- theme.textColorMain.color
+
+Service [#service]:
+- color: isDarkMode ? theme.textColorLight.color : color
+- theme.textColorMain
+- bg-blur-5
+- style={{
+                    // border: "1px solid rgba(128, 128, 128, 0.5)",
+                    boxShadow: " rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+                    backgroundImage: "radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.20) 0.1%, rgba(239,249,251,0.20) 90.1% )"
+                  }}
+- style={{
+                      border: "1px solid rgba(128, 128, 128, 0.5)",
+                      backgroundImage:
+                        "radial-gradient( circle farthest-corner at 32.7% 82.7%, rgba(167, 201, 87, 1) 8.3%, rgba(106, 153, 78, 1) 79.4% )",
+                      color: theme.textColorLight.color,
+                    }}
+
+Portfolio [#portfolio]:
+-  bg-blur-5
+- style={{
+          borderTop: "1px solid rgba(128, 128, 128, 0.15)",
+          borderBottom: "1px solid rgba(128, 128, 128, 0.15)",
+          backgroundImage:
+            "radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.20) 0.1%, rgba(239,249,251,0.20) 90.1% )",
+        }}
+
+Card [#card]:
+- style={{
+        maxWidth: "350px",
+        border: "1px solid rgba(128, 128, 128, 0.5)",
+        boxShadow:
+          " rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px",
+        backgroundImage:
+          "radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.20) 0.1%, rgba(239,249,251,0.20) 90.1% )",
+      }}
+- style={{
+          border: "1px solid rgba(128, 128, 128, 0.5)",
+          color: descColor,
+          boxShadow:
+            " rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px",
+          backgroundImage:
+            "radial-gradient(circle farthest-corner at 32.7% 82.7%, rgba(167, 201, 87, 1) 8.3%, rgba(106, 153, 78, 1) 79.4%)",
+        }}
+- style={{
+              border: "1px solid rgba(128, 128, 128, 0.5)",
+              backgroundImage:
+                "linear-gradient( 106.8deg,  rgb(65, 60, 60) 6%, rgb(112, 103, 103) 47.6%, rgb(65,60,60) 87.8% )",
+              color: descColor,
+            }}
+- const descColor = props.theme.textColorLight.color
+
+HexagonalBg:
+- color={props.color}
+
+Loader:
+- bg-opacity-75 bg-blur-3 
+- color={props.color}
+
+
+
+
+
+********************************************************************************************************
+
+const Themes = {
+    greenTheme : {
+        textColorStandard: {color: '#6a994e'},
+        textColorLight: {color: '#f2e8cf'},
+        border: {border: "1px solid rgba(128, 128, 128, 0.50)"}
+	borderTop: {borderTop: "1px solid rgba(128, 128, 128, 0.50)"}
+	borderBottom: {borderBottom: "1px solid rgba(128, 128, 128, 0.50)"}
+	borderLeft: {borderLeft: "1px solid rgba(128, 128, 128, 0.50)"}
+	borderRight: {borderRight: "1px solid rgba(128, 128, 128, 0.50)"},
+	backgroundStandard: {backgroundImage: "radial-gradient( circle farthest-corner at 50.4% 50.5%, rgba(167, 201, 87, 1) 0%, rgba(106, 153, 78, 1) 90%"},
+	backgroundTransparent: {backgroundImage: "radial-gradient( circle farthest-corner at 10% 20%,  rgba(234,249,249,0.20) 0.1%, rgba(239,249,251,0.20) 90.1% )"},
+	backgroundExtra: {backgroundImage: "linear-gradient( 106.8deg,  rgb(65, 60, 60) 6%, rgb(112, 103, 103) 47.6%, rgb(65,60,60) 87.8% )"},
+        buttonStandard: {
+        	color: "#f2e8cf",
+        	border: "1px solid rgba(128, 128, 128, 0.5)",
+        	backgroundImage: "radial-gradient( circle farthest-corner at 32.7% 82.7%, rgba(106, 153, 78, 1) 8.3%, #386641 79.4% )",
+        	cursor: "pointer",
+        	':hover': {
+        		backgroundImage: "radial-gradient( circle farthest-corner at 32.7% 82.7%, rgba(167, 201, 87, 1) 8.3%, rgba(106, 153, 78, 1) 79.4% )"
+        	}
+        }
+        
+        styleClass: {
+            buttonRBg: 'r-green-gradient-btn', //1
+        }
+
+    }
+}

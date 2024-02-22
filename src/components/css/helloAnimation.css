@@ -1,0 +1,32 @@
+.hello-text {
+  background-clip: text;
+  -webkit-background-clip: text; /* Safari/Chrome */
+  -moz-background-clip: text; /* Firefox */
+  -ms-background-clip: text; /* Internet Explorer */
+  font-size: 3em;
+  font-weight: bold;
+  color: #333;
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .hello-text {
+    font-size: 5em;
+  }
+}
+@media (max-width: 768px) {
+  .hello-container {
+    margin: 3em 0 1em 0 !important;
+  }
+}
