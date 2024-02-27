@@ -5,6 +5,7 @@ export default class Contact extends Component {
     const { theme } = this.props;
     const contactHeading = "My Contact";
     const introText = "Connect with me with confidence.";
+    const messageMeHeading = "How can I help you?";
     return (
       <div id="contact" className="container py-5">
         <div className="py-3">
@@ -14,7 +15,7 @@ export default class Contact extends Component {
           </p>
           <div className="p-1">
             <div
-              className="row rounded bg-blur-5"
+              className="row rounded bg-blur-5 overflow-hidden"
               style={{
                   ...theme.borderAll,
                 ...theme.backgroundTransparent,
@@ -88,16 +89,15 @@ export default class Contact extends Component {
                 </div>
               </div>
               <div
-                className="font-size-18 col-md-7 p-0 d-flex justify-content-center"
-                style={{ ...theme.boxShadowAll, ...theme.backgroundStandard }}
+                className="font-size-18 col-md-7 p-0 d-flex justify-content-center "
+                style={{ ...theme.backgroundStandard }}
               >
                 <form className="p-5 w-95">
                   <p className="fs-4 fw-bold">
-                    Feel free to contact me, I'll get back to you as soon as
-                    possible.
+                    {messageMeHeading}
                   </p>
                   <div className="mb-3">
-                    <label for="inputName" className="form-label">
+                    <label htmlFor="inputName" className="form-label">
                       Name *
                     </label>
                     <input
@@ -109,7 +109,7 @@ export default class Contact extends Component {
                     />
                   </div>
                   <div className="mb-3">
-                    <label for="inputEmail" className="form-label">
+                    <label htmlFor="inputEmail" className="form-label">
                       Email address *
                     </label>
                     <input
@@ -124,7 +124,7 @@ export default class Contact extends Component {
                     </span>
                   </div>
                   <div className="mb-3">
-                    <label for="inputMessage" className="form-label">
+                    <label htmlFor="inputMessage" className="form-label">
                       Message *
                     </label>
                     <textarea
@@ -137,7 +137,7 @@ export default class Contact extends Component {
                   <center>
                     <button
                       type="submit"
-                      className="btn btn-light px-5 mx-auto"
+                      className="btn btn-light px-5 py-2 mx-auto"
                       style={{ ...theme.textColorStandard }}
                     >
                       Send Message

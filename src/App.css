@@ -4,6 +4,12 @@ body {
   -webkit-overflow-scrolling: touch;
 
 }
+body.modal-open {
+  overflow: hidden;
+}
+.nav-link.active{
+  color: #6a994e !important;
+}
 /* Background */
 .bg-transparent-grey {
   background-color: #6c757d28;

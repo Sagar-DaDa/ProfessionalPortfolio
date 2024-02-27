@@ -21,7 +21,7 @@ export default class Footer extends Component {
           ...theme.textColorLight,
         }}
       >
-        <p className="fs-2 fw-bold">{footerHeading.toUpperCase()}</p>
+        <p className="fs-2 fw-bold m-0">{footerHeading.toUpperCase()}</p>
         <p className="font-size-18 m-0">{introText}</p>
         <div className="my-2 d-flex gap-2 align-items-center justify-content-center justify-content-center">
           <a

@@ -68,13 +68,14 @@ export default function HorizontalSlider(props) {
                                 <div className="text-light text-center p-3 fs-5">
                                     <p className="">{client.desc}</p>
                                     <a
-                                        className={'btn-wide-1 text-decoration-none text-light '}
+                                        className={'btn btn-outline-secondary'}
                                         type='button'
                                         href={client.url}
                                         target="_blank"
                                         rel="noopener noreferrer">
                                         Visit Website
                                     </a>
+                                    {/* <button type="button" class="btn btn-outline-secondary">Secondary</button> */}
                                 </div>
                             </div>
                         </div>

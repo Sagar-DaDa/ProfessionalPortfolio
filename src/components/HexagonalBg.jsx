@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function HexagonalBg(props) {
     return (
-        <div className={`h-100 w-100 position-absolute d-flex zindex-100 bg-opacity-75 bg-blur-3   ${props.backgroundColor}`}>
+        <div className={`h-100 w-100 position-fixed top-0 left-0 d-flex zindex-100 bg-opacity-75 bg-blur-3   ${props.backgroundColor}`} style={{zIndex: "-1"}}>
             <HexaGone color={props.color} />
         </div>
     )

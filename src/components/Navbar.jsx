@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./css/navbar.css";
+import { Link } from "react-scroll";
 
 export default class Navbar extends Component {
   constructor() {
@@ -17,21 +18,29 @@ export default class Navbar extends Component {
     siteName: PropTypes.string.isRequired,
     isDarkMode: PropTypes.bool.isRequired,
     theme: PropTypes.object.isRequired,
-    toggleDarkMode: PropTypes.func.isRequired
-  }
+    toggleDarkMode: PropTypes.func.isRequired,
+  };
 
   static defaultProps = {
     siteName: "SiteName",
     isDarkMode: false,
-  }
+  };
 
   toggleNavbar = () => {
     this.setState({ isNavbarToggled: !this.state.isNavbarToggled });
   };
 
   render() {
-    const { siteName, isDarkMode, theme, toggleDarkMode } = this.props;
-    
+    const { siteName, isDarkMode, theme, toggleDarkMode, renderNotification } =
+      this.props;
+    const commonLinkProps = {
+      spy: true,
+      smooth: true,
+      offset: -50,
+      duration: 500,
+      className: "nav-link py-1"
+    }
+
     return (
       <div className="mb-5 pb-5" id="navBar">
         <nav
@@ -40,9 +49,16 @@ export default class Navbar extends Component {
           } navbar navbar-expand-lg font-outfit py-1 position-fixed bg-opacity-75 bg-blur-5 w-100 top-0`}
         >
           <div className="container-fluid">
-            <a className="navbar-brand fw-bold fs-3 site-name" href="#navBar">
+            <Link
+              to="homeSection"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
+              className="navbar-brand fw-bold fs-3 site-name cursor-pointer"
+            >
               {siteName}
-            </a>
+            </Link>
             <div className="p-1 d-flex border-radius-50">
               <span
                 className={`navbar-toggler m-0 p-0 cursor-pointer border-0 fs-1 ${
@@ -61,29 +77,42 @@ export default class Navbar extends Component {
             </div>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto me-0 font-size-18 me-3">
-                <a
-                  className="nav-link active py-1"
-                  style={theme.textColorStandard}
-                  aria-current="page"
-                  href="#about"
+                <Link
+                  to="aboutSection"
+                  {...commonLinkProps}
                 >
                   About
-                </a>
-                <a className="nav-link py-1" href="#resume">
+                </Link>
+                <Link
+                  to="resumeSection"
+                  {...commonLinkProps}
+                >
                   Resume
-                </a>
-                <a className="nav-link py-1" href="#service">
+                </Link>
+                <Link
+                  to="serviceSection"
+                  {...commonLinkProps}
+                >
                   Service
-                </a>
-                <a className="nav-link py-1" href="#portfolio">
+                </Link>
+                <Link
+                  to="portfolioSection"
+                  {...commonLinkProps}
+                >
                   Portfolio
-                </a>
-                <a className="nav-link py-1" href="/">
+                </Link>
+                <Link
+                  to="blogSection"
+                  {...commonLinkProps}
+                >
                   Blog
-                </a>
-                <a className="nav-link py-1" href="#contact">
+                </Link>
+                <Link
+                  to="contactSection"
+                  {...commonLinkProps}
+                >
                   Contact
-                </a>
+                </Link>
               </div>
               <div
                 onClick={toggleDarkMode}
@@ -103,7 +132,7 @@ export default class Navbar extends Component {
                 <span
                   className={`${
                     isDarkMode ? "fa-solid fa-moon " : "fa-solid fa-sun"
-                  } text-light`}
+                  } text-light cursor-pointer`}
                   onMouseOver={() =>
                     this.setState({ isThemeTogglerHovered: true })
                   }

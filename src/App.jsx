@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Colors from "./modules/Colors.mjs";
 import Loader from "./components/Loader";
 import Themes from "./modules/Themes.mjs";
 import Home from "./components/Home";
@@ -12,6 +11,9 @@ import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 import Footer from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Notification, { NotificationType } from "./components/Notification";
+import { Element } from "react-scroll";
 
 export default class App extends Component {
   constructor() {
@@ -26,9 +28,11 @@ export default class App extends Component {
     this.state = {
       isDarkMode: darkModeStatus,
       loading: true,
-      // backgroundColor: this.isDarkMode ? "bg-dark" : "bg-light",
-      // color: this.isDarkMode ? "text-light" : "text-dark",
       theme: Themes.greenTheme,
+      notification: {
+        type: null,
+        message: null,
+      },
     };
   }
 
@@ -40,6 +44,22 @@ export default class App extends Component {
       this.state.isDarkMode
         ? this.setState({ color: "text-light" })
         : this.setState({ color: "text-dark" });
+      this.state.isDarkMode
+        ? this.setState({
+            notification: {
+              type: NotificationType.TOAST,
+              message: "Dark mode enabled.",
+            },
+          })
+        : this.setState({
+            notification: {
+              type: NotificationType.TOAST,
+              message: "Light mode enabled.",
+            },
+          });
+      setTimeout(() => {
+        this.setState({ notification: { type: null, message: null } });
+      }, 3000);
     });
   };
   componentDidMount() {
@@ -51,6 +71,15 @@ export default class App extends Component {
   componentWillUnmount() {
     clearTimeout(this.delay);
   }
+
+  renderNotification = (notificationType, message) => {
+    this.setState({
+      notification: { type: notificationType, message: message },
+    });
+    setTimeout(() => {
+      this.setState({ notification: { type: null, message: null } });
+    }, 3000);
+  };
 
   render() {
     const { loading } = this.state;
@@ -64,47 +93,49 @@ export default class App extends Component {
     return (
       <>
         {loading ? <Loader color={this.state.theme.textColorStandard} /> : null}
+        <HexagonalBg color={this.state.isDarkMode ? "black" : "white"} />
+        {this.state.notification && (
+          <Notification notification={this.state.notification} />
+        )}
+
         <div
-          className=""
-          id="hexa-bg"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100vh",
-            zIndex: "-1",
-            overflow: "hidden",
-          }}
-        >
-          <HexagonalBg color={this.state.isDarkMode ? "black" : "white"} />
-        </div>
-        <div
-          id="mainBody"
-          className="font-outfit "
+          id="singlePageView"
+          className={`font-outfit`}
           style={
             this.state.isDarkMode
               ? this.state.theme.textColorLight
               : this.state.theme.textColorDark
           }
         >
-          <Navbar
-            siteName={this.siteName}
-            isDarkMode={this.state.isDarkMode}
-            theme={this.state.theme}
-            toggleDarkMode={() => {
-              this.toggleDarkMode();
-            }}
-          />
-          <Home theme={this.state.theme} />
-
-          <About theme={this.state.theme} />
-          <Resume theme={this.state.theme} />
-          <Service theme={this.state.theme} />
-          <Portfolio theme={this.state.theme} />
-          <Contact theme={this.state.theme}/>
+          <Element name="homeSection">
+            <Navbar
+              siteName={this.siteName}
+              isDarkMode={this.state.isDarkMode}
+              theme={this.state.theme}
+              toggleDarkMode={() => {
+                this.toggleDarkMode();
+              }}
+              renderNotification={this.renderNotification}
+            />
+            <Home theme={this.state.theme} />
+          </Element>
+          <Element name="aboutSection">
+            <About theme={this.state.theme} />
+          </Element>
+          <Element name="resumeSection">
+            <Resume theme={this.state.theme} />
+          </Element>
+          <Element name="serviceSection">
+            <Service theme={this.state.theme} />
+          </Element>
+          <Element name="portfolioSection">
+            <Portfolio theme={this.state.theme} />
+          </Element>
+          <Element name="contactSection">
+            <Contact theme={this.state.theme} />
+          </Element>
+          <Footer theme={this.state.theme} />
         </div>
-        <Footer theme={this.state.theme}/>
       </>
     );
   }
