@@ -31,14 +31,13 @@ export default class Navbar extends Component {
   };
 
   render() {
-    const { siteName, isDarkMode, theme, toggleDarkMode, renderNotification } =
+    const { siteName, isDarkMode, theme, toggleDarkMode, toggleBlogMode  } =
       this.props;
     const commonLinkProps = {
       spy: true,
       smooth: true,
-      offset: -50,
-      duration: 500,
-      className: "nav-link py-1"
+      duration: 300,
+      className: "nav-link py-1 cursor-pointer"
     }
 
     return (
@@ -103,6 +102,7 @@ export default class Navbar extends Component {
                 </Link>
                 <Link
                   to="blogSection"
+                  onClick={toggleBlogMode}
                   {...commonLinkProps}
                 >
                   Blog

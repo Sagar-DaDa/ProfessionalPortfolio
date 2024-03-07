@@ -10,6 +10,10 @@ body.modal-open {
 .nav-link.active{
   color: #6a994e !important;
 }
+.hover-style-sm:hover{
+  color: #4e555cd7 !important;
+  cursor: pointer;
+}
 /* Background */
 .bg-transparent-grey {
   background-color: #6c757d28;

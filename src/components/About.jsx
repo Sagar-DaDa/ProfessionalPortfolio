@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ProgrammingSvg from "../imges/svgs/programmer.svg";
-import Resume from "./Resume";
 
 export default class About extends Component {
   render() {

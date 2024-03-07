@@ -26,46 +26,7 @@ export default class Service extends Component {
           desc: "Spring Boot, Spring Tools, Maven, Github, IntelliJ",
         },
       },
-      // detailsThree: {
-      //   symbolicIcon: "fa-solid fa-layer-group",
-      //   heading: "Backend Development",
-      //   desc: "I have a fervor for constructing robust systems, finding satisfaction in turning abstract concepts into tangible backend solutions through coding.",
-      //   additionalDescOne: { heading: "Languages I use", desc: "Java, MySQL" },
-      //   additionalDescTwo: {
-      //     heading: "Languages I use",
-      //     desc: "Spring Boot, Spring Tools, Maven, Github, IntelliJ",
-      //   },
-      // },
-      // detailsFour: {
-      //   symbolicIcon: "",
-      //   heading: "Backend Development",
-      //   desc: "I have a fervor for constructing robust systems, finding satisfaction in turning abstract concepts into tangible backend solutions through coding.",
-      //   additionalDescOne: { heading: "Languages I use", desc: "Java, MySQL" },
-      //   additionalDescTwo: {
-      //     heading: "Languages I use",
-      //     desc: "Spring Boot, Spring Tools, Maven, Github IntelliJ",
-      //   },
-      // },
-      // detailsFive: {
-      //   symbolicIcon: "",
-      //   heading: "Backend Development",
-      //   desc: "I have a fervor for constructing robust systems, finding satisfaction in turning abstract concepts into tangible backend solutions through coding.",
-      //   additionalDescOne: { heading: "Languages I use", desc: "Java, MySQL" },
-      //   additionalDescTwo: {
-      //     heading: "Languages I use",
-      //     desc: "Spring Boot, Spring Tools, Maven, Github IntelliJ",
-      //   },
-      // },
-      // detailsSix: {
-      //   symbolicIcon: "",
-      //   heading: "Backend Development",
-      //   desc: "I have a fervor for constructing robust systems, finding satisfaction in turning abstract concepts into tangible backend solutions through coding.",
-      //   additionalDescOne: { heading: "Languages I use", desc: "Java, MySQL" },
-      //   additionalDescTwo: {
-      //     heading: "Languages I use",
-      //     desc: "Spring Boot, Spring Tools, Maven, Github IntelliJ",
-      //   },
-      // },
+      
     };
     const specialityColSize =
       Object.keys(specialityDetails).length > 3

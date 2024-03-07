@@ -1,22 +1,3 @@
-// const Themes = {
-//     greenTheme : {
-//         backgroundColorMain: {backgroundColor: '#6a994e'},//
-//         backgroundColorDark: {backgroundColor: '#386641'},
-//         backgroundColorMuted: {backgroundColor: '#a7c957'},
-//         backgroundColorOptional: {backgroundColor: '#bc4749'},
-//         textColorMain: {color: '#6a994e'},
-//         textColorDark: {color: '#386641'},
-//         textColorMuted: {color: '#a7c957'},
-//         textColorLight: {color: '#f2e8cf'},//
-//         border: {border: '1px solid #6a994e'},
-//         styleClass: {
-//             buttonBg: 'green-gradient-btn',
-//             buttonRBg: 'r-green-gradient-btn', //1
-//             buttonBgOpt1: 'cool-gradient-btn'
-//         }
-
-//     }
-// }
 const Themes = {
     greenTheme: {
         textColorStandard: { color: '#6a994e' },
@@ -58,7 +39,6 @@ const Themes = {
             color: "#f2e8cf",
             border: "1px solid rgba(128, 128, 128, 0.5)",
             backgroundImage: "radial-gradient( circle farthest-corner at 32.7% 82.7%, rgba(167, 201, 87, 1) 8.3%, rgba(106, 153, 78, 1) 79.4% )",
-            color: "red",
         },
         buttonExtra: {
             color: '#f2e8cf',

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Card from "./Card";
 import HelloAnimation from "./HelloAnimation";
 import HireMeModal from "./HireMeModal";
-import { Element } from "react-scroll";
+import { Link } from "react-scroll";
 
 export default class Home extends Component {
   constructor() {
@@ -24,8 +24,6 @@ export default class Home extends Component {
       title: "Sagar Shrestha",
       desc: "Full-Stack Developer",
     };
-
-    const { showHireMeModal, setShowHireMeModal } = false;
 
     return (
       <div id="home" className="container w-100 h-100 p-4 mb-4">
@@ -81,19 +79,21 @@ export default class Home extends Component {
             </div>
             <div className="mt-3 d-flex gap-2 justify-content-center justify-content-md-start">
               <div className="">
-                <button
-                  onClick={() => (window.location.hash = "contact")}
+                <Link
+                  to="contactSection"
+                  smooth={true}
+                  duration={300}
                   className={`btn r-green-gradient-btn font-size-15 fw-bold `}
                 >
                   SEND MESSAGE
-                </button>
+                </Link>
               </div>
               <div className="">
                 <button
-                  onClick={() => (
-                    this.setState({ showHireMeModal: true }),
-                    document.body.classList.add("modal-open")
-                  )}
+                  onClick={() => {
+                    this.setState({ showHireMeModal: true });
+                    document.body.classList.add("modal-open");
+                  }}
                   className={`btn fw-bold cool-gradient-btn`}
                 >
                   HIRE ME NOW
@@ -105,10 +105,10 @@ export default class Home extends Component {
         {this.state.showHireMeModal && (
           <HireMeModal
             theme={theme}
-            onCloseModal={() => (
-              this.setState({ showHireMeModal: false }),
-              document.body.classList.remove("modal-open")
-            )}
+            onCloseModal={() => {
+              this.setState({ showHireMeModal: false });
+              document.body.classList.remove("modal-open");
+            }}
           />
         )}
       </div>

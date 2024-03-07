@@ -1,0 +1,11 @@
+#cardSlider .slick-prev:before ,
+#cardSlider .slick-next:before  {
+  color: #6a994e;
+  display: none !important;
+}
+
+
+
+.slick-slide {
+  transition: transform 1s ease-in-out;
+}

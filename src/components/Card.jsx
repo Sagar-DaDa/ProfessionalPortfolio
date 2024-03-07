@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function Card(props) {
-  const image = process.env.PUBLIC_URL + "/images/me.jpg";
   const descColor = props.theme.textColorLight.color;
   return (
     <div
