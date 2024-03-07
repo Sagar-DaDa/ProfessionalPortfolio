@@ -31,14 +31,14 @@ export default class Navbar extends Component {
   };
 
   render() {
-    const { siteName, isDarkMode, theme, toggleDarkMode, toggleBlogMode  } =
+    const { siteName, isDarkMode, theme, toggleDarkMode, toggleBlogMode } =
       this.props;
     const commonLinkProps = {
       spy: true,
       smooth: true,
       duration: 300,
-      className: "nav-link py-1 cursor-pointer"
-    }
+      className: "nav-link py-1 cursor-pointer",
+    };
 
     return (
       <div className="mb-5 pb-5" id="navBar">
@@ -76,29 +76,21 @@ export default class Navbar extends Component {
             </div>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto me-0 font-size-18 me-3">
-                <Link
-                  to="aboutSection"
-                  {...commonLinkProps}
-                >
+                <Link to="aboutSection" {...commonLinkProps}>
                   About
                 </Link>
-                <Link
-                  to="resumeSection"
-                  {...commonLinkProps}
-                >
+                <Link to="resumeSection" {...commonLinkProps}>
                   Resume
                 </Link>
-                <Link
-                  to="serviceSection"
-                  {...commonLinkProps}
-                >
+                <Link to="serviceSection" {...commonLinkProps}>
                   Service
                 </Link>
-                <Link
-                  to="portfolioSection"
-                  {...commonLinkProps}
-                >
+                <Link to="portfolioSection" {...commonLinkProps}>
                   Portfolio
+                </Link>
+
+                <Link to="contactSection" {...commonLinkProps}>
+                  Contact
                 </Link>
                 <Link
                   to="blogSection"
@@ -106,12 +98,6 @@ export default class Navbar extends Component {
                   {...commonLinkProps}
                 >
                   Blog
-                </Link>
-                <Link
-                  to="contactSection"
-                  {...commonLinkProps}
-                >
-                  Contact
                 </Link>
               </div>
               <div
